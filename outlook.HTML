@@ -51,10 +51,10 @@
         }
     </style>
     <script>
-        function toggleContent(id) {
-            var content = document.getElementById(id);
-            var title = content.previousElementSibling;
-            
+        function toggleContent(sectionId) {
+            var content = document.getElementById('content-' + sectionId);
+            var title = document.getElementById('title-' + sectionId);
+
             if (content.style.display === "none" || content.style.display === "") {
                 content.style.display = "block";
                 title.classList.add("active");
@@ -66,14 +66,15 @@
     </script>
 </head>
 <body>
+    <!-- Outlook Service -->
     <div class="container">
         <div class="header">
             Alteración de servicio de Outlook: Última actualización 04/01/2023 - 7:00 pm
         </div>
         
         <div class="section">
-            <div class="section-title" onclick="toggleContent('resumen')" role="button">Resumen del Incidente</div>
-            <div class="content" id="resumen">
+            <div class="section-title" id="title-outlook-resumen" onclick="toggleContent('outlook-resumen')" role="button">Resumen del Incidente</div>
+            <div class="content" id="content-outlook-resumen">
                 <ul>
                     <li>Interrupción del servicio que afecta el envío y recepción de correos electrónicos.</li>
                     <li>Problema identificado en el servidor de Outlook.</li>
@@ -82,8 +83,8 @@
         </div>
         
         <div class="section">
-            <div class="section-title" onclick="toggleContent('poblacion')" role="button">Población Afectada</div>
-            <div class="content" id="poblacion">
+            <div class="section-title" id="title-outlook-poblacion" onclick="toggleContent('outlook-poblacion')" role="button">Población Afectada</div>
+            <div class="content" id="content-outlook-poblacion">
                 <ul>
                     <li>Usuarios corporativos en la Región A.</li>
                     <li>Aproximadamente 10,000 usuarios afectados.</li>
@@ -92,8 +93,8 @@
         </div>
         
         <div class="section">
-            <div class="section-title" onclick="toggleContent('trabajo')" role="button">Trabajo Realizado Hasta Ahora</div>
-            <div class="content" id="trabajo">
+            <div class="section-title" id="title-outlook-trabajo" onclick="toggleContent('outlook-trabajo')" role="button">Trabajo Realizado Hasta Ahora</div>
+            <div class="content" id="content-outlook-trabajo">
                 <ul>
                     <li>Problema identificado y escalado al equipo de ingeniería.</li>
                     <li>Solución temporal implementada para usuarios críticos.</li>
@@ -102,8 +103,8 @@
         </div>
         
         <div class="section">
-            <div class="section-title" onclick="toggleContent('tiempo')" role="button">Tiempo Aproximado para la Próxima Actualización</div>
-            <div class="content" id="tiempo">
+            <div class="section-title" id="title-outlook-tiempo" onclick="toggleContent('outlook-tiempo')" role="button">Tiempo Aproximado para la Próxima Actualización</div>
+            <div class="content" id="content-outlook-tiempo">
                 <p>Información en espera de actualización.</p>
                 <ul>
                     <li>Próxima actualización esperada para el 04/01/2023 - 9:00 pm.</li>
@@ -111,14 +112,16 @@
             </div>
         </div>
     </div>
+
+    <!-- Teams Service -->
     <div class="container">
         <div class="header">
             Alteración de servicio de Teams: Última actualización 04/01/2023 - 7:00 pm
         </div>
         
         <div class="section">
-            <div class="section-title" onclick="toggleContent('resumen')" role="button">Resumen del Incidente</div>
-            <div class="content" id="resumen">
+            <div class="section-title" id="title-teams-resumen" onclick="toggleContent('teams-resumen')" role="button">Resumen del Incidente</div>
+            <div class="content" id="content-teams-resumen">
                 <ul>
                     <li>Interrupción del servicio que afecta las reuniones y la mensajería instantánea.</li>
                     <li>Problema identificado en los servidores de Microsoft Teams.</li>
@@ -127,8 +130,8 @@
         </div>
         
         <div class="section">
-            <div class="section-title" onclick="toggleContent('poblacion')" role="button">Población Afectada</div>
-            <div class="content" id="poblacion">
+            <div class="section-title" id="title-teams-poblacion" onclick="toggleContent('teams-poblacion')" role="button">Población Afectada</div>
+            <div class="content" id="content-teams-poblacion">
                 <ul>
                     <li>Usuarios corporativos en la Región B.</li>
                     <li>Aproximadamente 8,000 usuarios afectados.</li>
@@ -137,8 +140,8 @@
         </div>
         
         <div class="section">
-            <div class="section-title" onclick="toggleContent('trabajo')" role="button">Trabajo Realizado Hasta Ahora</div>
-            <div class="content" id="trabajo">
+            <div class="section-title" id="title-teams-trabajo" onclick="toggleContent('teams-trabajo')" role="button">Trabajo Realizado Hasta Ahora</div>
+            <div class="content" id="content-teams-trabajo">
                 <ul>
                     <li>Problema identificado y escalado al equipo de soporte de Microsoft.</li>
                     <li>Se están implementando soluciones temporales para minimizar el impacto.</li>
@@ -147,8 +150,8 @@
         </div>
         
         <div class="section">
-            <div class="section-title" onclick="toggleContent('tiempo')" role="button">Tiempo Aproximado para la Próxima Actualización</div>
-            <div class="content" id="tiempo">
+            <div class="section-title" id="title-teams-tiempo" onclick="toggleContent('teams-tiempo')" role="button">Tiempo Aproximado para la Próxima Actualización</div>
+            <div class="content" id="content-teams-tiempo">
                 <p>Información en espera de actualización.</p>
                 <ul>
                     <li>Próxima actualización esperada para el 04/01/2023 - 9:30 pm.</li>
@@ -156,14 +159,16 @@
             </div>
         </div>
     </div>
+
+    <!-- Internet Service -->
     <div class="container">
         <div class="header">
-            Alteracion de servicio de Internet: Ultima actualiciacion 04/01/2023 - 7:00 pm
+            Alteración de servicio de Internet: Última actualización 04/01/2023 - 7:00 pm
         </div>
         
         <div class="section">
-            <div class="section-title" onclick="toggleContent('resumen')" role="button">Resumen del Incidente</div>
-            <div class="content" id="resumen">
+            <div class="section-title" id="title-internet-resumen" onclick="toggleContent('internet-resumen')" role="button">Resumen del Incidente</div>
+            <div class="content" id="content-internet-resumen">
                 <ul>
                     <li>Interrupción del servicio que afecta la conectividad a Internet.</li>
                     <li>Problema identificado en el proveedor de servicios de Internet.</li>
@@ -172,8 +177,8 @@
         </div>
         
         <div class="section">
-            <div class="section-title" onclick="toggleContent('poblacion')" role="button">Población Afectada</div>
-            <div class="content" id="poblacion">
+            <div class="section-title" id="title-internet-poblacion" onclick="toggleContent('internet-poblacion')" role="button">Población Afectada</div>
+            <div class="content" id="content-internet-poblacion">
                 <ul>
                     <li>Usuarios corporativos en la Región C.</li>
                     <li>Aproximadamente 15,000 usuarios afectados.</li>
@@ -182,8 +187,8 @@
         </div>
         
         <div class="section">
-            <div class="section-title" onclick="toggleContent('trabajo')" role="button">Trabajo Realizado Hasta Ahora</div>
-            <div class="content" id="trabajo">
+            <div class="section-title" id="title-internet-trabajo" onclick="toggleContent('internet-trabajo')" role="button">Trabajo Realizado Hasta Ahora</div>
+            <div class="content" id="content-internet-trabajo">
                 <ul>
                     <li>Problema identificado y escalado al proveedor de servicios.</li>
                     <li>Se están implementando soluciones temporales para minimizar el impacto.</li>
@@ -192,8 +197,8 @@
         </div>
         
         <div class="section">
-            <div class="section-title" onclick="toggleContent('tiempo')" role="button">Tiempo Aproximado para la Próxima Actualización</div>
-            <div class="content" id="tiempo">
+            <div class="section-title" id="title-internet-tiempo" onclick="toggleContent('internet-tiempo')" role="button">Tiempo Aproximado para la Próxima Actualización</div>
+            <div class="content" id="content-internet-tiempo">
                 <p>Información en espera de actualización.</p>
                 <ul>
                     <li>Próxima actualización esperada para el 04/01/2023 - 9:15 pm.</li>
