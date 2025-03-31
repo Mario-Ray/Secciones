@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estado del Servicio de Outlook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            border: 1px solid #ccc;
+            width: 80%;
+            margin: auto;
+        }
+        .header {
+            background-color: #f2f2f2;
+            padding: 10px;
+            font-weight: bold;
+            color: green;
+        }
+        .section {
+            padding: 15px;
+            border-top: 1px solid #ddd;
+        }
+        .section-title {
+            font-weight: bold;
+            color: green;
+            cursor: pointer;
+        }
+        .content {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            Alteración de servicio de Outlook: Última actualización 04/01/2023 - 7:00 pm
+        </div>
+        
+        <div class="section">
+            <div class="section-title" onclick="toggleContent('resumen')">▶ Resumen del Incidente</div>
+            <div class="content" id="resumen">
+                <ul>
+                    <li>Interrupción del servicio que afecta el envío y recepción de correos electrónicos.</li>
+                    <li>Problema identificado en el servidor de Outlook.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title" onclick="toggleContent('poblacion')">▶ Población Afectada</div>
+            <div class="content" id="poblacion">
+                <ul>
+                    <li>Usuarios corporativos en la Región A.</li>
+                    <li>Aproximadamente 10,000 usuarios afectados.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title" onclick="toggleContent('trabajo')">▶ Trabajo Realizado Hasta Ahora</div>
+            <div class="content" id="trabajo">
+                <ul>
+                    <li>Problema identificado y escalado al equipo de ingeniería.</li>
+                    <li>Solución temporal implementada para usuarios críticos.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title" onclick="toggleContent('tiempo')">▶ Tiempo Aproximado para la Próxima Actualización</div>
+            <div class="content" id="tiempo">
+                <p>Información en espera de actualización.</p>
+		<ul>
+                    <li>Próxima actualización esperada para el 04/01/2023 - 9:00 pm.</li>
+               	</ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
