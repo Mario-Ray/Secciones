@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alertas de Seguridad</title>
+    <style>
+        .accordion {
+            background-color: #f1f1f1;
+            color: #006400;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .panel {
+            padding: 10px;
+            display: none;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    
+    <button class="accordion">Alerta de Seguridad: Evite correos electrónicos sospechosos</button>
+    <div class="panel">
+        <p>Recuerde no hacer clic en enlaces de correos electrónicos que no reconozca. Verifique siempre la autenticidad del remitente.</p>
+    </div>
+
+    <button class="accordion">Alerta de Privacidad: Proteja su información personal</button>
+    <div class="panel">
+        <p>No comparta información personal o financiera a través de correos electrónicos o llamadas no solicitadas.</p>
+    </div>
+
+    <button class="accordion">Alerta de Actualización: Cambie su contraseña regularmente</button>
+    <div class="panel">
+        <p>Para mantener su cuenta segura, cambie su contraseña al menos cada tres meses y utilice combinaciones seguras.</p>
+    </div>
+
+    <button class="accordion">Actualización de Información: Verifique sus datos de contacto</button>
+    <div class="panel">
+        <p>Es necesario que actualice su número de teléfono y dirección de correo electrónico para garantizar la comunicación efectiva.</p>
+    </div>
+
+    <button class="accordion">Confirmación de Actividad: Revise transacciones recientes</button>
+    <div class="panel">
+        <p>Por favor, revise las transacciones recientes en su cuenta y confirme que todas son legítimas.</p>
+    </div>
+
+    <button class="accordion">Cambio de Contraseña: Restablezca su contraseña</button>
+    <div class="panel">
+        <p>Se requiere que cambie su contraseña debido a una posible actividad sospechosa. Hágalo lo antes posible.</p>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
